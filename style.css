@@ -1,0 +1,79 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1f2937; 
+}
+
+.theme-primary { 
+    color: #4338ca; 
+}
+.bg-theme-primary { 
+    background-color: #4338ca; 
+}
+.border-theme-primary { 
+    border-color: #4338ca; 
+}
+.hover\:bg-theme-primary-dark:hover { 
+    background-color: #3730a3; 
+}
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% { 
+        transform: translateX(0%); 
+    }
+    100% { 
+        transform: translateX(-100%); 
+    }
+}
+
+.animated-element {
+    opacity: 0; 
+    will-change: transform, opacity;
+}
+
+@keyframes slide-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out forwards;
+}
+
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+
+.accordion-button[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+}
+
+#application-modal {
+    transition: opacity 0.3s ease;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
